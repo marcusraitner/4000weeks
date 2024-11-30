@@ -3,10 +3,6 @@ A very powerful stoic meditation is memento mori. This [Scriptable](https://scri
 
 ![IMG_E37E952D928F-1](https://github.com/user-attachments/assets/50ef6c3c-4069-4fce-b096-502a6a03996d)
 
-## Contact
-Autor: Dr. Marcus Raitner
-Please [raise an issue](https://github.com/marcusraitner/4000weeks/issues/new/choose) for suggestions and bugs
-
 ## Installation 
 1. Install [Scriptable](https://scriptable.app) from the Apple App Store.
 2. On your iPhone copy the entire code of [4000weeks.js](https://github.com/marcusraitner/4000weeks/blob/main/4000weeks.js) to your clipboard.
