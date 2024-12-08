@@ -11,6 +11,25 @@ let birthday = new Date("1974-12-01");
 const MS_PER_WEEK = 1000 * 60 * 60 * 24 * 7;
 const LIFE_SPAN = 4000;
 
+const quotes = [
+  {
+    author: "Seneca",
+    quote: "It is not that we have a short time to live, but that we waste a lot of it."
+  },
+  {
+    author: "Seneca",
+    quote: "Life is long enough if you know how to use it."
+  },
+  {
+    author: "Seneca",
+    quote: "It is not that we have so little time but that we lose so much."
+  },
+  {
+    author: "Seneca",
+    quote: "While we are postponing, life speeds by."
+  }
+];
+
 // Create and configure the widget with the heatmap
 async function createWidget() {
 
@@ -32,7 +51,7 @@ async function createWidget() {
   const DEATHDAY = new Date(
     birthday.valueOf() + LIFE_SPAN * MS_PER_WEEK
   );
-  
+
   const widget = new ListWidget();
   widget.setPadding(0, 10, 0, 10);
   widget.backgroundColor = new Color("#000000");
@@ -84,7 +103,7 @@ async function createWidget() {
   title.font = Font.lightSystemFont(14);
   title.textColor = new Color(DAY_COLOR);
   title.rightAlignText();
-  
+
   // Then the central image
   vStack.addSpacer(null);
   vStack.addImage(context.getImage());
@@ -95,6 +114,23 @@ async function createWidget() {
   bottomStack.layoutHorizontally();
   bottomStack.centerAlignContent();
   bottomStack.setPadding(0, 0, 0, 0);
+
+  // Add a stack for the quote
+  const quoteStack = bottomStack.addStack();
+  quoteStack.layoutVertically();
+  quoteStack.centerAlignContent();
+  quoteStack.setPadding(0, 0, 0, 0)
+  const index = Math.floor(Math.random() * quotes.length);
+  const quote = quoteStack.addText(quotes[index].quote);
+  quote.font = Font.lightSystemFont(14);
+  quote.textColor = new Color(REMAINING_DAY_COLOR);
+  quote.leftAlignText();
+  quoteStack.addSpacer(5);
+  const author = quoteStack.addText(quotes[index].author);
+  author.font = Font.lightSystemFont(14);
+  author.textColor = new Color(DAY_COLOR);
+  author.rightAlignText();
+
   bottomStack.addSpacer(null);
   const death = bottomStack.addText("✝︎ " + DEATHDAY.getFullYear().toString());
   death.font = Font.blackSystemFont(16);
@@ -107,9 +143,5 @@ async function createWidget() {
 }
 
 const widget = await createWidget();
-if (config.runsInAccessoryWidget) {
-  Script.setWidget(widget);
-} else {
-  widget.presentLarge();
-}
+widget.presentLarge();
 Script.complete();
