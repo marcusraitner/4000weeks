@@ -11,14 +11,11 @@ let birthday = new Date("1974-12-01");
 const MS_PER_WEEK = 1000 * 60 * 60 * 24 * 7;
 const LIFE_SPAN = 4000;
 
+// Quotes
 const quotes = [
   {
     author: "Seneca",
     quote: "It is not that we have a short time to live, but that we waste a lot of it."
-  },
-  {
-    author: "Seneca",
-    quote: "Life is long enough if you know how to use it."
   },
   {
     author: "Seneca",
@@ -27,6 +24,26 @@ const quotes = [
   {
     author: "Seneca",
     quote: "While we are postponing, life speeds by."
+  },
+  {
+    author: "Marcus Aurelius",
+    quote: "It is not death that a man should fear, but he should fear never beginning to live."
+  },
+  {
+    author: "Seneca",
+    quote: "You act like mortals in all that you fear, and like immortals in all that you desire."
+  },
+  {
+    author: "Oliver Burkeman",
+    quote: "The average human lifespan is absurdly, terrifyingly, insultingly short."
+  },
+  {
+    author: "Greg McKeown",
+    quote: "The quantity of our noes dictates the quality of our yeses."
+  },
+  {
+    author: "Greg McKeown",
+    quote: "If you don't prioritize your life, someone else will."
   }
 ];
 
@@ -100,7 +117,7 @@ async function createWidget() {
   birthText.leftAlignText();
   topStack.addSpacer(null);
   const title = topStack.addText("memento mori");
-  title.font = Font.lightSystemFont(14);
+  title.font = Font.lightSystemFont(12);
   title.textColor = new Color(DAY_COLOR);
   title.rightAlignText();
 
@@ -122,12 +139,12 @@ async function createWidget() {
   quoteStack.setPadding(0, 0, 0, 0)
   const index = Math.floor(Math.random() * quotes.length);
   const quote = quoteStack.addText(quotes[index].quote);
-  quote.font = Font.lightSystemFont(14);
+  quote.font = Font.lightSystemFont(12);
   quote.textColor = new Color(REMAINING_DAY_COLOR);
   quote.leftAlignText();
   quoteStack.addSpacer(5);
   const author = quoteStack.addText(quotes[index].author);
-  author.font = Font.lightSystemFont(14);
+  author.font = Font.lightSystemFont(12);
   author.textColor = new Color(DAY_COLOR);
   author.rightAlignText();
 
