@@ -1,7 +1,7 @@
 # 4000 Weeks: Memento Mori
 A very powerful stoic meditation is memento mori. This [Scriptable](https://scriptable.app) widget takes your birthday as param, e.g., `bday=1974-12-01`, and displays how many of your roughly 4.000 weeks have passed and how many you might expect to come:
 
-![IMG_E37E952D928F-1](https://github.com/user-attachments/assets/50ef6c3c-4069-4fce-b096-502a6a03996d)
+![IMG_2873](https://github.com/user-attachments/assets/44af67ca-9086-46fe-97a7-49cd6ef41c2e)
 
 ## Installation 
 1. Install [Scriptable](https://scriptable.app) from the Apple App Store.
